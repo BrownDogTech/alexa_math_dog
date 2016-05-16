@@ -1,0 +1,23 @@
+DifficultyMenu change difficulty
+DifficultyMenu change level
+DifficultyMenu difficulty
+DifficultyMenu level
+DifficultyMenu set difficulty
+DifficultyMenu set level
+DifficultyMenu adjust difficulty
+DifficultyMenu adjust level
+
+SetDifficulty set difficulty to {Number}
+SetDifficulty set level to {Number}
+
+SetRoundLength set round length to {Number} questions
+SetRoundLength ask {Number} questions per round
+SetRoundLength {Number} questions per round
+
+StartGame begin game
+StartGame begin
+StartGame start game
+StartGame start
+StartGame let's go
+
+NumericResponse {Number}

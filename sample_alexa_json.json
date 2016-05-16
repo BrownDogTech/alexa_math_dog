@@ -1,0 +1,164 @@
+[
+  {
+    "session": {
+      "new": true,
+      "sessionId": "amzn1.echo-api.session.be14c25d-d3a1-4658-a2c4-b2bfc731d193",
+      "user": {
+        "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QHDTE7XPLTYUD6BCXZJW2ARDNNEZVDYBUIIF5YKSH6VDOL6ADOERGMXSJKIVQPRBHBZ64S5BQ7MATPLCIOMA4URXVLV53HJHCTJU2Y4KF7V753Y3XLBENW6IUBLZPXBN2U2VCKQM5YMEZTZJUCG2JI5YLJWY"
+      },
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.e301b8fe-6290-437a-bed6-2b2e11e3ef06"
+      }
+    },
+    "request": {
+      "timestamp": "2016-05-15T16:41:02Z",
+      "type": "LaunchRequest",
+      "requestId": "amzn1.echo-api.request.0abd502b-1013-4eb6-b624-69730bcf8162"
+    },
+    "version": "1.0"
+  },
+  {
+    "session": {
+      "new": false,
+      "sessionId": "amzn1.echo-api.session.be14c25d-d3a1-4658-a2c4-b2bfc731d193",
+      "user": {
+        "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QHDTE7XPLTYUD6BCXZJW2ARDNNEZVDYBUIIF5YKSH6VDOL6ADOERGMXSJKIVQPRBHBZ64S5BQ7MATPLCIOMA4URXVLV53HJHCTJU2Y4KF7V753Y3XLBENW6IUBLZPXBN2U2VCKQM5YMEZTZJUCG2JI5YLJWY"
+      },
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.e301b8fe-6290-437a-bed6-2b2e11e3ef06"
+      }
+    },
+    "request": {
+      "timestamp": "2016-05-15T16:41:08Z",
+      "type": "IntentRequest",
+      "requestId": "amzn1.echo-api.request.4bd9124a-8f87-4494-a850-359e71018e5b",
+      "intent": {
+        "name": "AMAZON.HelpIntent"
+      }
+    },
+    "version": "1.0"
+  },
+  {
+    "session": {
+      "new": false,
+      "sessionId": "amzn1.echo-api.session.be14c25d-d3a1-4658-a2c4-b2bfc731d193",
+      "user": {
+        "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QHDTE7XPLTYUD6BCXZJW2ARDNNEZVDYBUIIF5YKSH6VDOL6ADOERGMXSJKIVQPRBHBZ64S5BQ7MATPLCIOMA4URXVLV53HJHCTJU2Y4KF7V753Y3XLBENW6IUBLZPXBN2U2VCKQM5YMEZTZJUCG2JI5YLJWY"
+      },
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.e301b8fe-6290-437a-bed6-2b2e11e3ef06"
+      }
+    },
+    "request": {
+      "timestamp": "2016-05-15T16:41:30Z",
+      "type": "IntentRequest",
+      "requestId": "amzn1.echo-api.request.f840d62c-8d61-45fb-94eb-51dc9ec28ab6",
+      "intent": {
+        "name": "AMAZON.StopIntent"
+      }
+    },
+    "version": "1.0"
+  },
+  {
+    "session": {
+      "new": false,
+      "sessionId": "amzn1.echo-api.session.be14c25d-d3a1-4658-a2c4-b2bfc731d193",
+      "user": {
+        "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QHDTE7XPLTYUD6BCXZJW2ARDNNEZVDYBUIIF5YKSH6VDOL6ADOERGMXSJKIVQPRBHBZ64S5BQ7MATPLCIOMA4URXVLV53HJHCTJU2Y4KF7V753Y3XLBENW6IUBLZPXBN2U2VCKQM5YMEZTZJUCG2JI5YLJWY"
+      },
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.e301b8fe-6290-437a-bed6-2b2e11e3ef06"
+      }
+    },
+    "request": {
+      "timestamp": "2016-05-15T16:41:30Z",
+      "reason": "ERROR",
+      "type": "SessionEndedRequest",
+      "requestId": "amzn1.echo-api.request.9781affe-f58d-4981-80f0-1ce454a29dac"
+    },
+    "version": "1.0"
+  },
+  {
+    "session": {
+      "new": false,
+      "sessionId": "amzn1.echo-api.session.73c5923d-c705-4bae-85b5-ba3c151cbc44",
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.e301b8fe-6290-437a-bed6-2b2e11e3ef06"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QHDTE7XPLTYUD6BCXZJW2ARDNNEZVDYBUIIF5YKSH6VDOL6ADOERGMXSJKIVQPRBHBZ64S5BQ7MATPLCIOMA4URXVLV53HJHCTJU2Y4KF7V753Y3XLBENW6IUBLZPXBN2U2VCKQM5YMEZTZJUCG2JI5YLJWY"
+      },
+      "attributes": {
+        "number_correct": 0,
+        "difficulty": 1,
+        "last_question": {
+          "term_1": 10,
+          "answer": 16,
+          "operation": "add",
+          "term_2": 6,
+          "question_text": "What is 10 + 6"
+        },
+        "previous_place": "ask problem",
+        "number_incorrect": 0,
+        "question_count": 1
+      }
+    },
+    "request": {
+      "timestamp": "2016-05-15T20:59:43Z",
+      "type": "IntentRequest",
+      "requestId": "amzn1.echo-api.request.cd7a1451-4eba-4133-98d8-f9f191bb7da9",
+      "intent": {
+        "slots": {
+          "Number": {
+            "name": "Number",
+            "value": "7"
+          }
+        },
+        "name": "NumericResponse"
+      }
+    },
+    "version": "1.0"
+  },
+  {
+    "session": {
+      "new": false,
+      "sessionId": "amzn1.echo-api.session.f7afbdb2-70dd-438e-b015-e5486f097c2b",
+      "application": {
+        "applicationId": "amzn1.echo-sdk-ams.app.e301b8fe-6290-437a-bed6-2b2e11e3ef06"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QHDTE7XPLTYUD6BCXZJW2ARDNNEZVDYBUIIF5YKSH6VDOL6ADOERGMXSJKIVQPRBHBZ64S5BQ7MATPLCIOMA4URXVLV53HJHCTJU2Y4KF7V753Y3XLBENW6IUBLZPXBN2U2VCKQM5YMEZTZJUCG2JI5YLJWY"
+      },
+      "attributes": {
+        "number_correct": 0,
+        "difficulty": 1,
+        "last_question": {
+          "term_1": 8,
+          "answer": 11,
+          "operation": "add",
+          "term_2": 3,
+          "question_text": "What is 8 + 3"
+        },
+        "previous_place": "ask problem",
+        "number_incorrect": 0,
+        "question_count": 1
+      }
+    },
+    "request": {
+      "timestamp": "2016-05-15T21:23:54Z",
+      "type": "IntentRequest",
+      "requestId": "amzn1.echo-api.request.7cfd7b3d-ad00-4c1f-85e5-8fca5b673bba",
+      "intent": {
+        "slots": {
+          "Number": {
+            "name": "Number",
+            "value": "11"
+          }
+        },
+        "name": "NumericResponse"
+      }
+    },
+    "version": "1.0"
+  }
+
+]
