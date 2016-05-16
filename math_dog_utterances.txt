@@ -15,8 +15,10 @@ SetRoundLength ask {Number} questions per round
 SetRoundLength {Number} questions per round
 
 StartGame begin game
+StartGame begin a game
 StartGame begin
 StartGame start game
+StartGame start a game
 StartGame start
 StartGame let's go
 

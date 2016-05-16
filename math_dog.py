@@ -122,6 +122,9 @@ def on_intent(intent_request, session):
     elif intent_name == "AMAZON.StopIntent":
         # Todo - add logic to verify user wants to end when getting this message
         return no_more(intent, session)
+    elif intent_name == "AMAZON.CancelIntent":
+        # Todo - add logic to verify user wants to end when getting this message
+        return no_more(intent, session)
     elif intent_name == "DifficultyMenu":
         return difficulty_menu(intent, session)
     elif intent_name == "SetDifficulty":
@@ -555,9 +558,11 @@ def get_question(difficulty):
 
 def get_encouragement(correct):
     if correct:
-        return "Way to go!!!!  "
+        message = encouragements["correct"][randint(0, len(encouragements["correct"])-1)]
+        return message
     else:
-        return "Better luck next time!  "
+        message = encouragements["incorrect"][randint(0, len(encouragements["incorrect"])-1)]
+        return message
 
 def setup_session_attributes():
     'Sets up initial Math Dog Session'
@@ -809,3 +814,22 @@ levels = \
 default_difficulty = 1
 default_round_length = 4
 
+encouragements = {
+    "correct": [
+        "Way to go!  ",
+        "Awesome job!  ",
+        "Great!  ",
+        "Keep up the good work!  ",
+        "Another one correct!  ",
+        "You're on fire!  ",
+        "Well done!  "
+    ],
+    "incorrect": [
+        "Better luck next time.  ",
+        "Close, but not quite.  ",
+        "Nope, but keep going.  ",
+        "You'll get the next one.  ",
+        "So close.  ",
+        "Wrong, but don't give up.  "
+    ]
+}

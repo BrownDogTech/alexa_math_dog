@@ -1,6 +1,6 @@
 # Alexa Math Dog
 
-This is a code and design details for a skill for Amazon Alexa.  This code is designed and built to run in AWS Lambda.
+This is code and design details for a skill for Amazon Alexa.  This code is designed and built to run in AWS Lambda.
 
 Included files are:
 
