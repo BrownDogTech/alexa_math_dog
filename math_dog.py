@@ -121,9 +121,14 @@ def on_intent(intent_request, session):
         return get_help(intent, session)
     elif intent_name == "AMAZON.StopIntent":
         # Todo - add logic to verify user wants to end when getting this message
+        if "last_question" in session["attributes"].keys() and previous_place != "verify end game":
+            return verify_end_game(intent, session)
+
         return no_more(intent, session)
     elif intent_name == "AMAZON.CancelIntent":
         # Todo - add logic to verify user wants to end when getting this message
+        if "last_question" in session["attributes"].keys() and previous_place != "verify end game":
+            return verify_end_game(intent, session)
         return no_more(intent, session)
     elif intent_name == "DifficultyMenu":
         return difficulty_menu(intent, session)
@@ -157,10 +162,19 @@ def on_intent(intent_request, session):
                 return repeat_question(intent, session)
             # return ask_problem(intent, session)
             return play_game(intent, session)
+        elif previous_place in ["verify end game"]:
+            # End Game
+            return no_more(intent, session)
         else:
             return no_more(intent, session)
     elif intent_name == "AMAZON.NoIntent":
-        return no_more(intent, session)
+        if previous_place in ["verify end game"]:
+            # End Game
+            return repeat_question(intent, session)
+        elif "last_question" in session["attributes"].keys() and previous_place != "verify end game":
+            return verify_end_game(intent, session)
+        else:
+            return no_more(intent, session)
 
     else:
         raise ValueError("Invalid intent")
@@ -340,7 +354,11 @@ def repeat_question(intent, session):
     next_question = game_details["last_question"]
     card_title = "Repeat Question #%s." % (session["attributes"]["question_count"])
     card_text = next_question["question_text"]
-    speech_output = "<speak>I didn't catch your answer, please try again.  " + next_question["question_text"] + "</speak>"
+    speech_output = "<speak>"
+    if game_details["previous_place"] != "verify end game":
+        # leave off this phrase if coming from verifying end game
+        speech_output += "I didn't catch your answer, please try again.  "
+    speech_output += next_question["question_text"] + "</speak>"
     reprompt_text = "<speak>" + next_question["question_text"] + "</speak>"
 
     # Build output
@@ -368,7 +386,9 @@ def get_help(intent, session):
     text = "Looking for help?  Math Dog is easy to use.  " \
            "To get started, just say 'Begin Game', or just 'Begin'.  " \
            "After I ask you a question, just say your answer.  " \
+           "The current difficulty level is level " + str(session["attributes"]["difficulty"]) + ".  " \
            "To change the difficulty level, say 'Change Difficulty', and listen to the instructions. " \
+           "Each round will have " + str(session["attributes"]["round_length"]) + " questions.  " \
            "To change the number of questions per round say 'Ask 5 questions per round', and " \
            "rounds will have 5 questions from now on.  "
     speech_output = "<speak>" \
@@ -391,6 +411,29 @@ def get_help(intent, session):
             speech_output,
             reprompt_text,
             text,
+            should_end_session
+        )
+    )
+
+def verify_end_game(intent, session):
+    print("Verifying request to end mid-game")
+
+    card_title = "Are you sure you want to end the game?"
+    card_text = "I think you asked to stop the game, but we aren't done... do you really want to stop?"
+    speech_output = "<speak>" + card_text + "</speak>"
+    reprompt_text = "<speak>Do you really want to stop?</speak>"
+
+    # Build output
+    should_end_session = False
+    session["attributes"]["previous_place"] = "verify end game"
+
+    return build_response(
+        session["attributes"],
+        build_speechlet_response(
+            card_title,
+            speech_output,
+            reprompt_text,
+            card_text,
             should_end_session
         )
     )
@@ -421,7 +464,8 @@ def no_more(intent, session):
 def difficulty_menu(intent, session):
     card_title = "Math Dog Difficulty Settings"
     text = "Math Dog will get more challenging as you answer more questions correctly.  " \
-           "Difficulty levels range from 1 to 10, and games start at level 2.  " \
+           "Difficulty levels range from 1 to 10, and games are currently at " \
+           "level " + str(session["attributes"]["difficulty"]) + ".  " \
            "You can change the current difficulty level to Level 3 by saying 'Set Difficulty to 3', " \
            "or to Level 6 by saying 'Set Difficulty to 6'.  "
     speech_output = "<speak>" \
@@ -544,6 +588,14 @@ def get_question(difficulty):
         question_text = "What is %s times %s" % (term_1, term_2)
         print("Question is: %s * %s = %s." % (term_1, term_2, answer))
     if operation["operation"] == "divide":
+        # Don't divide by 0
+        while term_2 == 0:
+            term_2 = randint(1, operation["term_2_high_range"])
+        # Make sure the division problem results in integers
+        while term_1%term_2 != 0:
+            term_1 = randint(operation["term_1_low_range"], operation["term_1_high_range"])
+            term_2 = randint(1, operation["term_2_high_range"])
+
         answer = term_1 / term_2
         question_text = "What is %s divided by %s" % (term_1, term_2)
         print("Question is: %s / %s = %s." % (term_1, term_2, answer))
