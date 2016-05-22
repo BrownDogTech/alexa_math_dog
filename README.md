@@ -1,6 +1,6 @@
 # Alexa Math Dog
 
-This is code and design details for a skill for Amazon Alexa.  This code is designed and built to run in AWS Lambda.
+This is the code for a new Alexa Skill that helps kids and adults alike practice and strengthen basic math facts.  This code is designed and built to run in AWS Lambda.
 
 Included files are:
 
@@ -14,8 +14,10 @@ Here is the voice interaction design for Math Dog indicating the intended flow t
 
 ![Math Dog VUI](project_docs/vui_design_v1.png)
 
-## Demonstration Video
+## Video Links
 
-Click the link below to view a video of Math Dog in action.
+Check out these videos about Math Dog
 
-**Link coming soon**
+* [Math Dog in Action](https://youtu.be/zAKdmPhWJRg)
+* [The idea behind Math Dog](https://youtu.be/k71g79PL51s)
+* [A Design and Development Walkthrough](https://youtu.be/XG7AbIoXwCM)
